@@ -128,3 +128,25 @@ Planned future improvements:
 - Privileged Identity Management if licensing allows
 - hybrid identity with on-premises Active Directory
 - automated user/group inventory using Microsoft Graph
+
+## Project Screenshots
+
+### Cloud-only users
+
+![Cloud-only users](screenshots/entra-users-cloud-only.png)
+
+### Security Defaults enabled
+
+![Security Defaults enabled](screenshots/entra-security-defaults-enabled.png)
+
+### Limited admin role assignment
+
+![Groups Administrator role](screenshots/entra-groups-administrator-role.png)
+
+### Microsoft Graph read-only permissions
+
+![Microsoft Graph API permissions](screenshots/entra-app-api-permissions.png)
+
+### Audit logs
+
+![Audit logs](screenshots/entra-audit-logs.png)
