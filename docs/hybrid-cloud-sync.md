@@ -8,6 +8,8 @@ The objective was to synchronize only a dedicated test OU from Active Directory 
 
 ## Architecture
 
+Architecture diagram: [Hybrid Cloud Sync Architecture Diagram](hybrid-architecture-diagram.md)
+
 Flow:
 
 - SRV-AD01 / Active Directory / DNS

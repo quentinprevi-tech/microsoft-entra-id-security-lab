@@ -140,6 +140,10 @@ Documentation:
 This phase demonstrates synchronization from an on-premises Active Directory OU to Microsoft Entra ID using the Microsoft Entra Provisioning Agent, scoped synchronization, password hash synchronization, firewall hardening, and troubleshooting of a TLS/WebSocket issue on Windows Server 2022.
 
 
+## Architecture Diagrams
+
+- [Hybrid Cloud Sync architecture diagram](docs/hybrid-architecture-diagram.md)
+
 ## Example Scripts
 
 - [Microsoft Graph inventory example](scripts/graph-inventory.example.ps1) exports Entra ID users and groups to local CSV files using read-only Microsoft Graph permissions.
