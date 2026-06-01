@@ -1,12 +1,16 @@
 # Hybrid Identity with Microsoft Entra Cloud Sync
 
-## Objective
+#
+
+# Objective
 
 This phase demonstrates a hybrid identity setup between an on-premises Active Directory domain and Microsoft Entra ID using Microsoft Entra Cloud Sync.
 
 The goal was to synchronize a dedicated test OU from the local Active Directory environment to Microsoft Entra ID while keeping the configuration scoped, controlled, and safe for a lab environment.
 
-## Architecture
+#
+
+# Architecture
 
 Flow:
 
@@ -48,7 +52,9 @@ Local infrastructure:
  
 - Synchronization scoped to a dedicated test OU
 
-## Active Directory Preparation
+#
+
+# Active Directory Preparation
 
 A dedicated OU was created in the local Active Directory domain:
 
@@ -65,7 +71,9 @@ CN=Hybrid Alice,OU=Cloud-Sync-Lab,DC=homelab,DC=local
 
 The purpose of this OU was to avoid synchronizing the full Active Directory domain. Only lab test users were placed in scope.
 
-## SRV-SYNC01 Validation
+#
+
+# SRV-SYNC01 Validation
 
 Before installing and configuring Cloud Sync, SRV-SYNC01 was validated.
 
@@ -88,7 +96,9 @@ Validated AD connectivity included:
 - SMB: TCP 445
 - Global Catalog: TCP 3268
 
-## Microsoft Entra Provisioning Agent
+#
+
+# Microsoft Entra Provisioning Agent
 
 The Microsoft Entra Provisioning Agent was installed on SRV-SYNC01.
 
@@ -107,7 +117,9 @@ The following Windows services were validated:
 - AADConnectProvisioningAgent
 - AzureADConnectAgentUpdater
 
-## Cloud Sync Configuration
+#
+
+# Cloud Sync Configuration
 
 A Cloud Sync configuration was created for the domain:
 
@@ -122,7 +134,9 @@ Configuration details:
 
 The configuration was intentionally not applied to the whole domain.
 
-## On-Demand Provisioning Validation
+#
+
+# On-Demand Provisioning Validation
 
 Before relying on scheduled synchronization, on-demand provisioning was tested.
 
@@ -140,7 +154,9 @@ This confirmed that:
 - The agent could communicate with Microsoft Entra ID
 - The users could be created in Microsoft Entra ID
 
-## Issue Encountered: Cloud Sync Timeout
+#
+
+# Issue Encountered: Cloud Sync Timeout
 
 During the first provisioning attempts, on-demand provisioning failed with timeout errors.
 
@@ -150,7 +166,9 @@ The agent was visible as active in Microsoft Entra, but the provisioning operati
 
 This showed that an agent can be registered and visible while its real-time communication channel is still failing.
 
-## Local Agent Logs
+#
+
+# Local Agent Logs
 
 The local logs were located in:
 
@@ -166,7 +184,9 @@ The repeated error pattern was:
 
 Secondary errors about metrics collector and performance counters were also present, but they were not the root cause.
 
-## Troubleshooting Performed
+#
+
+# Troubleshooting Performed
 
 The following areas were checked:
 
@@ -195,7 +215,9 @@ Results:
 - Services were running
 - The WebSocket channel still failed
 
-## TLS / Schannel Root Cause
+#
+
+# TLS / Schannel Root Cause
 
 The issue was resolved by forcing TLS 1.2 for the Windows and .NET Framework stack used by the Microsoft Entra Provisioning Agent.
 
@@ -211,7 +233,9 @@ The applied fix included:
 
 After this change, the WebSocket communication succeeded and on-demand provisioning worked.
 
-## Cloud Sync Quarantine
+#
+
+# Cloud Sync Quarantine
 
 After the successful fix, the Cloud Sync configuration briefly showed a quarantine status.
 
@@ -227,7 +251,9 @@ Final Cloud Sync status:
 
 Sain / Healthy
 
-## Firewall Hardening
+#
+
+# Firewall Hardening
 
 During troubleshooting, a temporary broad firewall rule was used for SRV-SYNC01.
 
@@ -247,7 +273,9 @@ Alias examples:
 
 The broad OPT1 net to any any troubleshooting rule was not kept as a permanent rule.
 
-## Final Validated State
+#
+
+# Final Validated State
 
 Final state of the lab:
 
@@ -267,7 +295,9 @@ Snapshot name:
 
 srv-sync01-cloudsync-healthy
 
-## Screenshots
+#
+
+# Screenshots
 
 Recommended screenshots for this phase:
 
@@ -279,7 +309,9 @@ Recommended screenshots for this phase:
 - opnsense-srv-sync01-firewall-rules.png
 - srv-sync01-services-running.png
 
-## Security Notes
+#
+
+# Security Notes
 
 Sensitive information must be masked before publishing screenshots:
 
@@ -295,7 +327,9 @@ Sensitive information must be masked before publishing screenshots:
 - correlation IDs
 - transaction IDs
 
-## Lessons Learned
+#
+
+# Lessons Learned
 
 This phase showed that a hybrid identity deployment is not only about installing an agent.
 
@@ -312,28 +346,54 @@ Important validation points included:
 
 This troubleshooting process is valuable because it reflects real-world hybrid identity diagnostics.
 
-## Screenshot Evidence
+#
 
-### Active Directory test OU
+# Screenshot Evidence
+
+#
+
+#
+
+# Active Directory test OU
 
 ![Active Directory Cloud Sync lab OU users](../screenshots/ad-cloud-sync-lab-ou-users.png)
 
-### Cloud Sync configuration healthy
+#
+
+#
+
+# Cloud Sync configuration healthy
 
 ![Microsoft Entra Cloud Sync configuration healthy](../screenshots/entra-cloud-sync-configuration-healthy.png)
 
-### Cloud Sync agent active
+#
+
+#
+
+# Cloud Sync agent active
 
 ![Microsoft Entra Cloud Sync agent active](../screenshots/entra-cloud-sync-agent-active.png)
 
-### Cloud Sync scoped OU filter
+#
+
+#
+
+# Cloud Sync scoped OU filter
 
 ![Microsoft Entra Cloud Sync scoped OU filter](../screenshots/entra-cloud-sync-scope-ou.png)
 
-### Successful user provisioning audit logs
+#
+
+#
+
+# Successful user provisioning audit logs
 
 ![Microsoft Entra Cloud Sync audit success](../screenshots/ad-cloud-sync-lab-success.png)
 
-### Hardened OPNsense firewall rules
+#
+
+#
+
+# Hardened OPNsense firewall rules
 
 ![OPNsense SRV-SYNC01 firewall rules](../screenshots/opnsense-srv-sync01-firewall-rules.png)
