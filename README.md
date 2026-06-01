@@ -4,9 +4,7 @@ This repository documents a Microsoft Entra ID security lab focused on cloud ide
 
 The goal is to simulate basic identity administration tasks commonly found in small and medium business environments using a dedicated lab tenant.
 
-#
-
-# Project Objectives
+## Project Objectives
 
 - Create cloud-only Entra ID users
 - Create security groups for role-based organization
@@ -17,43 +15,27 @@ The goal is to simulate basic identity administration tasks commonly found in sm
 - Review sign-in and audit logs
 - Document security considerations and lessons learned
 
-#
-
-# Lab Scope
+## Lab Scope
 
 This lab uses a dedicated Microsoft Entra ID tenant created for portfolio and learning purposes.
 
 No production tenant, school tenant or employer tenant is used for the documented work.
 
-#
+## Implemented Components
 
-# Implemented Components
-
-#
-
-#
-
-# Cloud Users
+### Cloud Users
 
 - Alice User
 - Bob User
 - Charlie User
 
-#
-
-#
-
-# Security Groups
+### Security Groups
 
 - GG-Lab-Users
 - GG-Lab-IT-Admins
 - GG-Lab-MFA-Required
 
-#
-
-#
-
-# Admin Role Assignment
+### Admin Role Assignment
 
 Charlie User was assigned the limited built-in role:
 
@@ -61,19 +43,11 @@ Charlie User was assigned the limited built-in role:
 
 This demonstrates the principle of least privilege. No lab user was assigned Global Administrator.
 
-#
-
-#
-
-# Security Defaults
+### Security Defaults
 
 Security Defaults are enabled in the tenant to provide a basic Microsoft-recommended security baseline.
 
-#
-
-#
-
-# App Registration
+### App Registration
 
 An internal single-tenant application was registered:
 
@@ -86,11 +60,7 @@ Microsoft Graph permissions were configured with read-only access:
 
 Admin consent was granted in the lab tenant.
 
-#
-
-#
-
-# Logs
+### Logs
 
 The following logs were reviewed:
 
@@ -99,9 +69,7 @@ The following logs were reviewed:
 
 These logs show successful administrative operations such as user/group management, app registration changes, role assignment and admin consent.
 
-#
-
-# Screenshots
+## Screenshots
 
 Screenshots are stored in the `screenshots/` directory.
 
@@ -117,9 +85,7 @@ Sensitive information is masked before publication, including:
 - correlation IDs
 - generated `.onmicrosoft.com` domains containing personal identifiers
 
-#
-
-# Documentation
+## Documentation
 
 - [Architecture](docs/architecture.md)
 - [Users and Groups](docs/users-and-groups.md)
@@ -130,9 +96,7 @@ Sensitive information is masked before publication, including:
 - [Security Notes](docs/security-notes.md)
 - [Lessons Learned](docs/lessons-learned.md)
 
-#
-
-# Technologies
+## Technologies
 
 - Microsoft Entra ID
 - Azure Portal
@@ -142,9 +106,7 @@ Sensitive information is masked before publication, including:
 - Audit logs
 - Sign-in logs
 
-#
-
-# Project Status
+## Project Status
 
 Status: Phase 1 completed
 
@@ -167,9 +129,7 @@ Planned future improvements:
 - hybrid identity with on-premises Active Directory
 - automated user/group inventory using Microsoft Graph
 
-#
-
-# Hybrid Identity / Cloud Sync
+## Hybrid Identity / Cloud Sync
 
 This lab also includes a hybrid identity phase using Microsoft Entra Cloud Sync.
 
@@ -179,46 +139,24 @@ Documentation:
 
 This phase demonstrates synchronization from an on-premises Active Directory OU to Microsoft Entra ID using the Microsoft Entra Provisioning Agent, scoped synchronization, password hash synchronization, firewall hardening, and troubleshooting of a TLS/WebSocket issue on Windows Server 2022.
 
-#
+## Project Screenshots
 
-# Project Screenshots
-
-#
-
-#
-
-# Cloud-only users
+### Cloud-only users
 
 ![Cloud-only users](screenshots/entra-users-cloud-only.png)
 
-#
-
-#
-
-# Security Defaults enabled
+### Security Defaults enabled
 
 ![Security Defaults enabled](screenshots/entra-security-defaults-enabled.png)
 
-#
-
-#
-
-# Limited admin role assignment
+### Limited admin role assignment
 
 ![Groups Administrator role](screenshots/entra-groups-administrator-role.png)
 
-#
-
-#
-
-# Microsoft Graph read-only permissions
+### Microsoft Graph read-only permissions
 
 ![Microsoft Graph API permissions](screenshots/entra-app-api-permissions.png)
 
-#
-
-#
-
-# Audit logs
+### Audit logs
 
 ![Audit logs](screenshots/entra-audit-logs.png)
