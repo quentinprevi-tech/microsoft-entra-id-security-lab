@@ -297,3 +297,29 @@ Important validation points included:
 - documenting root cause and remediation
 
 This troubleshooting process is valuable because it reflects real-world hybrid identity diagnostics.
+
+## Screenshot Evidence
+
+### Active Directory test OU
+
+![Active Directory Cloud Sync lab OU users](../screenshots/ad-cloud-sync-lab-ou-users.png)
+
+### Cloud Sync configuration healthy
+
+![Microsoft Entra Cloud Sync configuration healthy](../screenshots/entra-cloud-sync-configuration-healthy.png)
+
+### Cloud Sync agent active
+
+![Microsoft Entra Cloud Sync agent active](../screenshots/entra-cloud-sync-agent-active.png)
+
+### Cloud Sync scoped OU filter
+
+![Microsoft Entra Cloud Sync scoped OU filter](../screenshots/entra-cloud-sync-scope-ou.png)
+
+### Successful user provisioning audit logs
+
+![Microsoft Entra Cloud Sync audit success](../screenshots/ad-cloud-sync-lab-success.png)
+
+### Hardened OPNsense firewall rules
+
+![OPNsense SRV-SYNC01 firewall rules](../screenshots/opnsense-srv-sync01-firewall-rules.png)
