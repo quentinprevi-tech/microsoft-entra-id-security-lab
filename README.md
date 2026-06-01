@@ -129,7 +129,6 @@ Planned future improvements:
 - hybrid identity with on-premises Active Directory
 - automated user/group inventory using Microsoft Graph
 
-
 ## Hybrid Identity / Cloud Sync
 
 This lab also includes a hybrid identity phase using Microsoft Entra Cloud Sync.

@@ -15,24 +15,38 @@ AD DS on SRV-AD01 -> SRV-SYNC01 with Microsoft Entra Provisioning Agent -> Micro
 Local infrastructure:
 
 - SRV-AD01
-  - Active Directory Domain Services
-  - DNS
-  - Domain: homelab.local
-  - IP address: 10.10.20.10
-  - Network: SERVERS / OPT1
+ 
+- Active Directory Domain Services
+ 
+- DNS
+ 
+- Domain: homelab.local
+ 
+- IP address: 10.10.20.10
+ 
+- Network: SERVERS / OPT1
 
 - SRV-SYNC01
-  - Windows Server 2022
-  - Microsoft Entra Provisioning Agent
-  - Joined to homelab.local
-  - IP address: 10.10.20.20
-  - DNS server: 10.10.20.10
-  - Network: SERVERS / OPT1
+ 
+- Windows Server 2022
+ 
+- Microsoft Entra Provisioning Agent
+ 
+- Joined to homelab.local
+ 
+- IP address: 10.10.20.20
+ 
+- DNS server: 10.10.20.10
+ 
+- Network: SERVERS / OPT1
 
 - Microsoft Entra ID
-  - Cloud Sync configuration
-  - Password hash synchronization enabled
-  - Synchronization scoped to a dedicated test OU
+ 
+- Cloud Sync configuration
+ 
+- Password hash synchronization enabled
+ 
+- Synchronization scoped to a dedicated test OU
 
 ## Active Directory Preparation
 
