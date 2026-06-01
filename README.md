@@ -129,6 +129,17 @@ Planned future improvements:
 - hybrid identity with on-premises Active Directory
 - automated user/group inventory using Microsoft Graph
 
+
+## Hybrid Identity / Cloud Sync
+
+This lab also includes a hybrid identity phase using Microsoft Entra Cloud Sync.
+
+Documentation:
+
+- [Hybrid Identity with Microsoft Entra Cloud Sync](docs/hybrid-cloud-sync.md)
+
+This phase demonstrates synchronization from an on-premises Active Directory OU to Microsoft Entra ID using the Microsoft Entra Provisioning Agent, scoped synchronization, password hash synchronization, firewall hardening, and troubleshooting of a TLS/WebSocket issue on Windows Server 2022.
+
 ## Project Screenshots
 
 ### Cloud-only users
